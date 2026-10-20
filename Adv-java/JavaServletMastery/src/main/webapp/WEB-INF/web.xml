@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>Java Servlet Architecture &amp; Lifecycle Application</display-name>
+
+    <!-- ServletContext Parameters (Application-wide parameters accessible across all servlets) -->
+    <context-param>
+        <param-name>applicationEnvironment</param-name>
+        <param-value>Production-Stage</param-value>
+    </context-param>
+    <context-param>
+        <param-name>adminEmail</param-name>
+        <param-value>admin@enterprise-servlets.com</param-value>
+    </context-param>
+
+    <!-- Servlet Definition and ServletConfig (Specific to this servlet instance) -->
+    <servlet>
+        <servlet-name>PortalServlet</servlet-name>
+        <servlet-class>com.servletexample.servlets.PortalServlet</servlet-class>
+        <init-param>
+            <param-name>departmentName</param-name>
+            <param-value>Enterprise Systems Gateway</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PortalServlet</servlet-name>
+        <url-pattern>/portal</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="https://jakarta.ee/xml/ns/jakartaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_0.xsd"
+        version="3.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>custom</short-name>
+    <uri>http://com.jspmastery/tags</uri>
+
+    <!-- Custom SimpleTag Handler -->
+    <tag>
+        <name>card</name>
+        <tag-class>com.jspmastery.tags.CardTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>title</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>color</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <!-- Custom Classic Iteration Tag Handler -->
+    <tag>
+        <name>repeat</name>
+        <tag-class>com.jspmastery.tags.RepeatTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>count</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <!-- Custom EL Function -->
+    <function>
+        <name>reverse</name>
+        <function-class>com.jspmastery.functions.StringFunctions</function-class>
+        <function-signature>java.lang.String reverse(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>mask</name>
+        <function-class>com.jspmastery.functions.StringFunctions</function-class>
+        <function-signature>java.lang.String mask(java.lang.String)</function-signature>
+    </function>
+</taglib>
